@@ -1,1 +1,9 @@
 c:\users\pc\documents\visual studio 2015\Projects\Ingreso_Cliente_2\Ingreso_Cliente_2\bin\Debug\Ingreso_Cliente_2.exe.config
+c:\users\pc\documents\visual studio 2015\Projects\Ingreso_Cliente_2\Ingreso_Cliente_2\obj\Debug\Ingreso_Cliente_2.csprojResolveAssemblyReference.cache
+c:\users\pc\documents\visual studio 2015\Projects\Ingreso_Cliente_2\Ingreso_Cliente_2\obj\Debug\Ingreso_Cliente_2.Form1.resources
+c:\users\pc\documents\visual studio 2015\Projects\Ingreso_Cliente_2\Ingreso_Cliente_2\obj\Debug\Ingreso_Cliente_2.Properties.Resources.resources
+c:\users\pc\documents\visual studio 2015\Projects\Ingreso_Cliente_2\Ingreso_Cliente_2\obj\Debug\Ingreso_Cliente_2.csproj.GenerateResource.Cache
+c:\users\pc\documents\visual studio 2015\Projects\Ingreso_Cliente_2\Ingreso_Cliente_2\bin\Debug\Ingreso_Cliente_2.exe
+c:\users\pc\documents\visual studio 2015\Projects\Ingreso_Cliente_2\Ingreso_Cliente_2\bin\Debug\Ingreso_Cliente_2.pdb
+c:\users\pc\documents\visual studio 2015\Projects\Ingreso_Cliente_2\Ingreso_Cliente_2\obj\Debug\Ingreso_Cliente_2.exe
+c:\users\pc\documents\visual studio 2015\Projects\Ingreso_Cliente_2\Ingreso_Cliente_2\obj\Debug\Ingreso_Cliente_2.pdb
