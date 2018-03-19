@@ -75,9 +75,16 @@ namespace Ingreso_Cliente_2
 
         }
 
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtRut.Clear();
+            txtNombre.Clear();
+            txtApellido.Clear();
+            comboSexo.SelectedIndex = 0;
+            comboEstado.SelectedIndex = 0;
+            txtRut.Focus();
 
-
-
+        }
     }
 }
 
