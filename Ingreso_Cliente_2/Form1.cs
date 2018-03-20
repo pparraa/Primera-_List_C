@@ -128,6 +128,11 @@ namespace Ingreso_Cliente_2
             comboDate.Value = cli.F_nacimiento;
             comboSexo.SelectedItem = cli.S;
             comboEstado.SelectedItem = cli.E;
+            //lc.Add(cli);
+            //tabla.DataSource = null;
+            //tabla.DataSource = lc;
+
+
         }
         private Cliente getCliente(String rut)
         {
@@ -142,6 +147,25 @@ namespace Ingreso_Cliente_2
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+            foreach (Cliente cli in lc)
+            {
+                if (cli.Rut == txtRut.Text)
+                {
+                    cli.Nombre = txtNombre.Text;
+                    cli.Apellido = txtApellido.Text;
+                    cli.F_nacimiento = comboDate.Value;
+                    cli.S = (Cliente.Sexo)this.comboSexo.SelectedIndex;
+                    cli.E = (Cliente.EstadoCivil)this.comboEstado.SelectedIndex;
+                    break;
+                }
+            }
+            tabla.DataSource = null;
+            tabla.DataSource = lc;
         }
     }
 }
