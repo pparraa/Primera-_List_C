@@ -8,12 +8,13 @@ namespace Ingreso_Cliente_2
 {
     public class Cliente
     {
+        private string rut;
+        private string nombre;
         private string apellido;
         private DateTime f_nacimiento;
         private Sexo s;
         private EstadoCivil e;
-        private string rut;
-        private string nombre;
+        
 
         public Cliente(string rut, string nombre, string apellido, DateTime f_nacimiento, Sexo s, EstadoCivil e)
         {
