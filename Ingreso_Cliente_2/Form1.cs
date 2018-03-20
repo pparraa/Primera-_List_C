@@ -167,6 +167,32 @@ namespace Ingreso_Cliente_2
             tabla.DataSource = null;
             tabla.DataSource = lc;
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult eli = MessageBox.Show(this, "Esta seguro de querer borrar al cliente", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (eli == DialogResult.No)
+                return;
+
+            Cliente cli = getCliente(txtRut.Text);
+            if (cli == null)
+            {
+                errorProvider1.SetError(txtRut, "Rut no Existe");
+                txtRut.Focus();
+                return;
+            }
+            foreach (Cliente client in lc)
+            {
+                if (client.Rut== txtRut.Text)
+                {
+                    lc.Remove(client);
+                    break;
+                }
+            }
+            btnLimpiar_Click(sender, e);
+            tabla.DataSource = null;
+            tabla.DataSource = lc;
+        }
     }
 }
 
