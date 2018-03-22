@@ -82,6 +82,7 @@
             this.btnActualiizar.TabIndex = 37;
             this.btnActualiizar.Text = "Actualzar";
             this.btnActualiizar.UseVisualStyleBackColor = true;
+            this.btnActualiizar.Click += new System.EventHandler(this.btnActualiizar_Click);
             // 
             // btnLimpiar
             // 
@@ -217,12 +218,6 @@
             // comboEstado
             // 
             this.comboEstado.FormattingEnabled = true;
-            this.comboEstado.Items.AddRange(new object[] {
-            "debe elegir estado",
-            "soltero",
-            "casado",
-            "divorciado",
-            "viudo"});
             this.comboEstado.Location = new System.Drawing.Point(247, 237);
             this.comboEstado.Name = "comboEstado";
             this.comboEstado.Size = new System.Drawing.Size(200, 21);
@@ -231,10 +226,6 @@
             // comboSexo
             // 
             this.comboSexo.FormattingEnabled = true;
-            this.comboSexo.Items.AddRange(new object[] {
-            "debe elegir sexo",
-            "hobre",
-            "mujer"});
             this.comboSexo.Location = new System.Drawing.Point(247, 204);
             this.comboSexo.Name = "comboSexo";
             this.comboSexo.Size = new System.Drawing.Size(200, 21);

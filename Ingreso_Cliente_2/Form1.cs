@@ -15,10 +15,24 @@ namespace Ingreso_Cliente_2
         private List<Cliente> lc = new List<Cliente>();
 
         public Form1()
+            
         {
             InitializeComponent();
-        }
-
+            Array arraySexo = typeof(Sexo).GetEnumValues();
+            Array arrayEstado = typeof(EstadoCivil).GetEnumValues();
+            //this.comboSexo.DataSource = arraySexo;
+            //this.comboSexo.DataSource = arraySexo;
+            this.comboSexo.Items.Add("Seleccione sexo");
+            foreach (object obj in arraySexo)
+            {
+                this.comboSexo.Items.Add(obj);
+            }
+            this.comboEstado.Items.Add("Seleccione estado");
+                foreach (object obj in arrayEstado)
+                {
+                    this.comboEstado.Items.Add(obj);
+                }
+            }
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
@@ -71,19 +85,13 @@ namespace Ingreso_Cliente_2
             cliente.Nombre = txtNombre.Text;
             cliente.Apellido = txtApellido.Text;
             cliente.F_nacimiento = comboDate.Value;
-            cliente.S = (Cliente.Sexo)this.comboSexo.SelectedIndex;
-            cliente.E = (Cliente.EstadoCivil)this.comboEstado.SelectedIndex;
+            cliente.Sexo = (Sexo)this.comboSexo.SelectedIndex;
+            cliente.Estado_civil = (EstadoCivil)this.comboEstado.SelectedIndex;
             lc.Add(cliente);
             tabla.DataSource = null;
             tabla.DataSource = lc;
 
-            txtRut.Clear();
-            txtNombre.Clear();
-            txtApellido.Clear();
-            comboSexo.SelectedIndex = 0;
-            comboEstado.SelectedIndex = 0;
-            txtRut.Focus();
-
+            btnLimpiar_Click(sender, e);
 
         }
 
@@ -126,11 +134,19 @@ namespace Ingreso_Cliente_2
             txtNombre.Text = cli.Nombre;
             txtApellido.Text = cli.Apellido;
             comboDate.Value = cli.F_nacimiento;
-            comboSexo.SelectedItem = cli.S;
-            comboEstado.SelectedItem = cli.E;
-            //lc.Add(cli);
-            //tabla.DataSource = null;
-            //tabla.DataSource = lc;
+            //comboSexo.SelectedIndex = cli.S;
+            //comboSexo.SelectedIndex = string form.ToString(cli.S);
+            //comboSexo.SelectedIndex = cli.comboSexo;
+            //comboSexo.SelectedItem = cli.S;
+            List<Cliente> ccl = new List<Cliente>();
+            comboSexo.SelectedItem = cli.Sexo;
+            comboEstado.SelectedItem = cli.Estado_civil;
+
+            ccl.Add(cli);
+            tabla.DataSource = null;
+            tabla.DataSource = ccl;
+
+
 
 
         }
@@ -151,7 +167,9 @@ namespace Ingreso_Cliente_2
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            DialogResult mod = MessageBox.Show(this, "Esta seguro de querer modificar a cliente", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (mod == DialogResult.No)
+                return;
             foreach (Cliente cli in lc)
             {
                 if (cli.Rut == txtRut.Text)
@@ -159,11 +177,12 @@ namespace Ingreso_Cliente_2
                     cli.Nombre = txtNombre.Text;
                     cli.Apellido = txtApellido.Text;
                     cli.F_nacimiento = comboDate.Value;
-                    cli.S = (Cliente.Sexo)this.comboSexo.SelectedIndex;
-                    cli.E = (Cliente.EstadoCivil)this.comboEstado.SelectedIndex;
+                    cli.Sexo = (Sexo)this.comboSexo.SelectedIndex;
+                    cli.Estado_civil = (EstadoCivil)this.comboEstado.SelectedIndex;
                     break;
                 }
             }
+            btnLimpiar_Click(sender, e);
             tabla.DataSource = null;
             tabla.DataSource = lc;
         }
@@ -192,6 +211,13 @@ namespace Ingreso_Cliente_2
             btnLimpiar_Click(sender, e);
             tabla.DataSource = null;
             tabla.DataSource = lc;
+        }
+
+        private void btnActualiizar_Click(object sender, EventArgs e)
+        {
+            tabla.DataSource = null;
+            tabla.DataSource = lc;
+
         }
     }
 }

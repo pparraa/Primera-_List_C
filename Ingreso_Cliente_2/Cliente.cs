@@ -12,31 +12,24 @@ namespace Ingreso_Cliente_2
         private string nombre;
         private string apellido;
         private DateTime f_nacimiento;
-        private Sexo s;
-        private EstadoCivil e;
+        private Sexo sexo;
+        private EstadoCivil estado_civil;
         
 
-        public Cliente(string rut, string nombre, string apellido, DateTime f_nacimiento, Sexo s, EstadoCivil e)
+        public Cliente(string rut, string nombre, string apellido, DateTime f_nacimiento, Sexo sexo, EstadoCivil estado_civil)
         {
             this.Rut = rut;
             this.Nombre = nombre;
             this.Apellido = apellido;
             this.F_nacimiento = f_nacimiento;
-            this.S = s;
-            this.E = e;
+            this.sexo = sexo;
+            this.estado_civil = estado_civil;
         }
 
         public Cliente()
         {
         }
-        public enum Sexo
-        {
-            hombre = 1, mujer
-        }
-        public enum EstadoCivil
-        {
-            soltero = 1, casado, divorciado, viudo
-        }
+       
 
 
         public string Rut
@@ -91,34 +84,42 @@ namespace Ingreso_Cliente_2
             }
         }
 
-        public Sexo S
+        public Sexo Sexo
         {
             get
             {
-                return s;
+                return sexo;
             }
 
             set
             {
-                s = value;
+                sexo = value;
             }
         }
 
-        public EstadoCivil E
+        public EstadoCivil Estado_civil
         {
             get
             {
-                return e;
+                return estado_civil;
             }
 
             set
             {
-                e = value;
+                estado_civil = value;
             }
         }
 
        
         
+    }
+    public enum Sexo
+    {
+        hombre = 1, mujer
+    }
+    public enum EstadoCivil
+    {
+        soltero = 1, casado, divorciado, viudo
     }
 
 
